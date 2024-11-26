@@ -80,6 +80,7 @@ const sandbox = <T, R, N extends string>(
           childPool.remove(child);
         } else {
           childPool.release(child);
+          childPool.kill(child, "SIGTERM");
         }
       }
     }
